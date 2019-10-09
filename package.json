@@ -1,0 +1,35 @@
+{
+  "name": "babel-plugin-react-component-name",
+  "description": "add component.name",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "repository": "https://github.com/yszk0123/babel-plugin-react-component-name.git",
+  "author": "Yuji Suzuki <y0suzuki0123@gmail.com>",
+  "keywords": [
+    "babel-plugin"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@types/babel-types": "^7.0.7",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.12",
+    "babel-plugin-tester": "^7.0.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  }
+}

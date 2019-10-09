@@ -2,6 +2,8 @@ import { NodePath, PluginObj } from '@babel/core';
 import template from '@babel/template';
 import * as types from '@babel/types';
 
+const UPPER_PATTERN = /^[A-Z]/;
+
 const buildDefinition = template(`
 Object.defineProperty(COMPONENT, "name", {
   value: COMPONENT_NAME
@@ -21,7 +23,7 @@ export default ({ types: t }: { types: typeof types }): PluginObj => ({
       path.traverse({
         ExportNamedDeclaration(path) {
           const componentName = getComponentName(path);
-          if (componentName) {
+          if (isValidComponentName(componentName)) {
             const definition = buildDefinition({
               COMPONENT: t.identifier(componentName),
               COMPONENT_NAME: t.stringLiteral(componentName),
@@ -47,4 +49,10 @@ function getComponentName(path: NodePath<types.ExportNamedDeclaration>) {
   }
 
   return declaration.id.name;
+}
+
+function isValidComponentName(
+  componentName: string | null | undefined,
+): componentName is string {
+  return !!componentName && UPPER_PATTERN.test(componentName);
 }

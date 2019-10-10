@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-react-component-name",
   "description": "add component.name",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib/index.js",
   "repository": "https://github.com/yszk0123/babel-plugin-react-component-name.git",
   "author": "Yuji Suzuki <y0suzuki0123@gmail.com>",

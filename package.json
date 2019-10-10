@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "build:production": "NODE_ENV=production tsc -p tsconfig.build.json",
     "test": "jest"
   },
   "devDependencies": {
